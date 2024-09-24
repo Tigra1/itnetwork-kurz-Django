@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Evidence pojištěných</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Evidence pojištěných</h1>
+<a href="{% url 'home' %}">Home</a><br>
+<a href="{% url 'add_pojisteny' %}">Přidat pojištěného</a><br>
+<a href="{% url 'list_pojistencu' %}">Zobrazit všechny pojištěné</a>
+<br>
+<br>
+  <form method="GET" action="{% url 'home' %}">
+        <input type="text" name="q" placeholder="Zadejte jméno nebo přijmení">
+        <button type="submit">Hledat</button>
+    </form>
+
+    <!-- Вывод списка застрахованных -->
+    {% if pojistencis %}
+        <ul>
+        {% for pojisteny in pojistencis %}
+            <li>{{ pojisteny.jmeno }} {{ pojisteny.prijmeni }} - Telefon: {{ pojisteny.telefon }} - Věk: {{ pojisteny.vek }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Žádní pojištěnci nebyli nalezeni.</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seznam_pojistencu</title>
+
+</head>
+<body>
+
+<h1>Seznam pojištěnců</h1>
+
+<a href="{% url 'home' %}">Home</a><br>
+<ul>
+    {% for pojisteny in pojistenci %}
+        <li>{{ pojisteny }}</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

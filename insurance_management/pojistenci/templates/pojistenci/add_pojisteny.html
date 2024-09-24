@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pridani_pojisteneho</title>
+</head>
+<body>
+<h1>Přidat pojištěného</h1>
+<a href="{% url 'home' %}">Home</a><br>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Přidat</button>
+</form>
+
+</body>
+</html>
