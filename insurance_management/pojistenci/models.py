@@ -1,7 +1,7 @@
 from django.db import models
 
-# Create your models here.
-# pojistenci/models.py
+# Tvorba modelů.
+
 from django.db import models
 
 class Pojisteny(models.Model):
