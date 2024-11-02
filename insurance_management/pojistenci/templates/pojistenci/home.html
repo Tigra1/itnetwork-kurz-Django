@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Evidence pojištěných</title>
+    <title>Evidence zboží</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -17,15 +17,6 @@
         <button type="submit">Hledat</button>
     </form>
 
-    <!-- Вывод списка застрахованных -->
-    {% if pojistencis %}
-        <ul>
-        {% for pojisteny in pojistencis %}
-            <li>{{ pojisteny.jmeno }} {{ pojisteny.prijmeni }} - Telefon: {{ pojisteny.telefon }} - Věk: {{ pojisteny.vek }}</li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>Žádní pojištěnci nebyli nalezeni.</p>
-    {% endif %}
+    
 </body>
 </html>
