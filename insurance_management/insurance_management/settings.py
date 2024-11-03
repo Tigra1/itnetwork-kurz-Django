@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-pbq-=l@ee(atfa*1y1w5ab^nwe=_u-dds8hvi-r-3z=6_n3i@s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['itnetwork-kurz-django-7.onrender.com']
+ALLOWED_HOSTS = ['itnetwork-kurz-django-9.onrender.com']
 
 
 
