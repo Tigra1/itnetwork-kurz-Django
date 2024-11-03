@@ -18,6 +18,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),  # Сохранение пути к админке
-    path('', include('pojistenci.urls')),  # Добавление маршрутов из приложения "pojistenci"
+    path('admin/', admin.site.urls),  # Uložení cesty k panelu administrátora
+    path('', include('pojistenci.urls')),  # Propojení z aplikace "pojistenci".
 ]
