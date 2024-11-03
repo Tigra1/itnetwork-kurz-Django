@@ -16,7 +16,16 @@
         <input type="text" name="q" placeholder="Zadejte jméno nebo přijmení">
         <button type="submit">Hledat</button>
     </form>
-
+ <!-- Вывод списка застрахованных -->
+    {% if pojistencis %}
+        <ul>
+        {% for pojisteny in pojistencis %}
+            <li>{{ pojisteny.jmeno }} {{ pojisteny.prijmeni }} - Telefon: {{ pojisteny.telefon }} - Věk: {{ pojisteny.vek }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Žádní pojištěnci nebyli nalezeni.</p>
+    {% endif %}
   
 </body>
 </html>
