@@ -8,8 +8,8 @@
 <body>
 <h1>Evidence zboží</h1>
 <a href="{% url 'home' %}">Home</a><br>
-<a href="{% url 'add_pojisteny' %}">Přidat pojištěného</a><br>
-<a href="{% url 'list_pojistencu' %}">Zobrazit všechny pojištěné</a>
+<a href="{% url 'add_pojisteny' %}">Přidat nové zboží</a><br>
+<a href="{% url 'list_pojistencu' %}">Zobrazit všechny pooložký</a>
 <br>
 <br>
   <form method="GET" action="{% url 'home' %}">
@@ -17,15 +17,6 @@
         <button type="submit">Hledat</button>
     </form>
 
-    <!-- Вывод списка застрахованных -->
-    {% if pojistencis %}
-        <ul>
-        {% for pojisteny in pojistencis %}
-            <li>{{ pojisteny.jmeno }} {{ pojisteny.prijmeni }} - Telefon: {{ pojisteny.telefon }} - Věk: {{ pojisteny.vek }}</li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>Žádní pojištěnci nebyli nalezeni.</p>
-    {% endif %}
+  
 </body>
 </html>
