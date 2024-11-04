@@ -4,8 +4,22 @@
     <meta charset="UTF-8">
     <title>Evidence zboží</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./lingeastyle.css">
 </head>
 <body>
+    <div class="top-menu-sale"> 
+        <div class="top-menu-logo">
+            <a href="https://www.lingea.cz" title="lingea" class="top-logo">
+                <img src="https://www.lingea.cz/img/lingea/logo-white.svg?v=1" title="lingea" alt="lingea">
+            </a>
+            <span class="motto">Radost z poznávání</span>
+        </div>
+    </div>
+    
+    <span class="motto">Radost z poznávání</span>
+    
+    <div class="container">
+        <div class="form_container"> 
 <h1>Evidence zboží</h1>
 <a href="{% url 'home' %}">Home</a><br>
 <a href="{% url 'add_pojisteny' %}">Přidat nové zboží</a><br>
@@ -16,6 +30,31 @@
         <input type="text" name="q" placeholder="Zadejte jméno nebo přijmení">
         <button type="submit">Hledat</button>
     </form>
+         </div >
+        
+            <div class="description">
+                <p> 
+                    <h2 class="text">Základní popis aplikace:</h2>
+                    Aplikace je vytvořena pro získání všech EAN kódů a počtu kusů z libovolného textu objednávky. 
+                    Ulehčuje zpracování objednávek tím, že vyčleněné EAN kódy a množství vypíše do dvou tabulek, 
+                    z nichž je možné snadno zkopírovat celý seznam kódů a vložit jej do skladového systému.
+                </p>
+                <p>
+                    Jako vzor můžete použít například tento text:<br>
+                    <code>
+                        1 ANGLICTINA - KONVERZACE 129.00 9788075081896<br>
+                        1 BUDAPEST 299.00 9788075089106<br>
+                        2 GRAMATIKA SOUČASNÉ NĚMČINY 3. VYDÁNÍ 189.00 9788075084545
+                    </code>
+                </p>
+                <p>
+                    Nebo zadat jakýkoli jiný text, který používá prodejce při objednávání zboží. Text objednávky nemusí 
+                    být nijak formátovaný. Pokud v textu nějaký údaj chybí nebo je nadbytečný, aplikace nezobrazí 
+                    žádný výsledek, čímž zabraňuje nesprávnému zadání do skladového systému.
+                </p>
+    
+            </div>
+    </div>
  <!-- Вывод списка застрахованных -->
     {% if pojistencis %}
         <ul>
