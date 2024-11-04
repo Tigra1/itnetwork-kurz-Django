@@ -104,16 +104,16 @@
     
     <div class="container">
         <div class="form_container"> 
-<label for="text"><h2 class="text">Evidence zboží</h2></label>
-<a href="{% url 'home' %}">Home</a><br>
-<a href="{% url 'add_pojisteny' %}">Přidat nové zboží</a><br>
-<a href="{% url 'list_pojistencu' %}">Zobrazit všechny pooložký</a>
-<br>
-<br>
-  <form method="GET" action="{% url 'home' %}" class="form">
-        <input type="text" name="q" placeholder="Zadejte jméno nebo přijmení">
-        <button type="submit" class="button">Hledat</button>
-    </form>
+            <label for="text"><h2 class="text">Evidence zboží</h2></label>
+                <form method="GET" action="{% url 'home' %}" class="form">
+                    <a href="{% url 'home' %}">Home</a><br>
+                    <a href="{% url 'add_pojisteny' %}">Přidat nové zboží</a><br>
+                    <a href="{% url 'list_pojistencu' %}">Zobrazit všechny pooložký</a>
+                    <br>
+                    <br>
+                    <input type="text" name="q" placeholder="Zadejte jméno nebo přijmení">
+                    <button type="submit" class="button">Hledat</button>
+                </form>
          </div >
         
             <div class="description">
