@@ -2,16 +2,143 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pridani_pojisteneho</title>
+    <title>Pridani zboží</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
 </head>
 <body>
-<h1>Přidat pojištěného</h1>
-<a href="{% url 'home' %}">Home</a><br>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Přidat</button>
-</form>
-
+<style>
+   .motto {
+        display: flex;
+        height: 12px;
+        flex-direction: column;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 9px;
+        color: #fff;
+        font-family: "arial", "serif";
+        font-size: 10.5px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 24px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        width: max-content;
+        text-decoration: none;
+    }
+    .table-container { 
+        display: flex; 
+        justify-content: left; 
+        gap: 10px; 
+        background-color: rgb(231, 227, 227);
+        margin-left: 5%;
+        padding: 3%;
+        max-width: 24%;
+    }
+    .top-menu-logo {
+        margin-left: 5%;
+    }
+    .top-menu-sale {
+        background: #457a0f;
+        display: flex;
+        height: 60px;
+        color: aliceblue;
+        padding: 1%;
+        position: relative;
+    }
+    .form {
+        margin-left: 5%;
+        color: #1d1818;
+        background-color: rgb(231, 227, 227);
+        padding: 5%;
+        max-width: 100%;
+        font-family:  'Franklin Gothic Medium', Arial, sans-serif;
+    
+    }
+    .text {
+        margin-left: 5%;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .button {
+        background-color: #457a0f;
+        color: #ffffff;
+        width: 30%;
+    }
+    footer {
+        text-align: center;
+        margin-top: 2%;
+    }
+    table {
+        background-color: #fff;
+        padding: 1%;
+    }
+    .container {
+            display: flex;
+           
+            gap: 70px;
+            padding: 3%;
+    }
+    .description {
+            max-width: 50%;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-left: 100;
+        }
+    .form_container {
+        width: 30%;
+        
+    }
+    textarea {
+        width: 100%;
+        box-sizing: border-box;
+        resize: vertical;
+    }
+</style>
+    <div class="top-menu-sale"> 
+        <div class="top-menu-logo">
+            <a href="https://www.lingea.cz" title="lingea" class="top-logo">
+                <img src="https://www.lingea.cz/img/lingea/logo-white.svg?v=1" title="lingea" alt="lingea">
+            </a>
+            <span class="motto">Radost z poznávání</span>
+        </div>
+    </div>
+    
+    <span class="motto">Radost z poznávání</span>
+    
+    <div class="container">
+        <div class="form_container"> 
+            <label for="text"><h2 class="text">Přidat zboží</h2></label>
+            <a href="{% url 'home' %}">Home</a>
+            <br>
+            <br>
+            <form method="post">
+                {% csrf_token %}
+                <br>
+                {{ form.as_p }}
+                <br>
+                <button type="submit">Přidat</button>
+            </form>
+         </div >
+        
+            <div class="description">
+                <p> 
+                    <h2 class="text">Základní popis aplikace:</h2>
+                    Aplikace je vytvořena pro zadávání nového zboží do databáze, která ukládá titul, kód Lingea, množství a EAN kód. Následně je možné vyhledat zboží podle titulu nebo vypsat celý seznam zboží z databáze.
+                </p>
+                
+    
+            </div>
+    </div>
+ <!-- Вывод списка застрахованных -->
+    {% if pojistencis %}
+        <ul>
+        {% for pojisteny in pojistencis %}
+            <li>{{ pojisteny.jmeno }} {{ pojisteny.prijmeni }} - Telefon: {{ pojisteny.telefon }} - Věk: {{ pojisteny.vek }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Žádní pojištěnci nebyli nalezeni.</p>
+    {% endif %}
+  
 </body>
 </html>
