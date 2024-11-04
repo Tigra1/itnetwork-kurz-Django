@@ -8,7 +8,7 @@
 </head>
 <body>
 <style>
-    .motto {
+   .motto {
         display: flex;
         height: 12px;
         flex-direction: column;
@@ -48,10 +48,12 @@
     }
     .form {
         margin-left: 5%;
-        color: #10185a;
+        color: #1d1818;
         background-color: rgb(231, 227, 227);
-        padding: 1%;
-        max-width: fit-content;
+        padding: 5%;
+        max-width: 100%;
+        font-family:  'Franklin Gothic Medium', Arial, sans-serif;
+    
     }
     .text {
         margin-left: 5%;
@@ -73,7 +75,7 @@
     .container {
             display: flex;
            
-            gap: 10px;
+            gap: 70px;
             padding: 3%;
     }
     .description {
@@ -83,6 +85,7 @@
             margin-left: 100;
         }
     .form_container {
+        width: 30%;
         
     }
     textarea {
@@ -111,7 +114,9 @@
                     <a href="{% url 'list_pojistencu' %}">Zobrazit všechny pooložký</a>
                     <br>
                     <br>
-                    <input type="text" name="q" placeholder="Zadejte jméno nebo přijmení">
+                    <input type="text" name="q" placeholder="Zadejte název zboží">
+                    <br>
+                    <br>
                     <button type="submit" class="button">Hledat</button>
                 </form>
          </div >
@@ -119,23 +124,10 @@
             <div class="description">
                 <p> 
                     <h2 class="text">Základní popis aplikace:</h2>
-                    Aplikace je vytvořena pro získání všech EAN kódů a počtu kusů z libovolného textu objednávky. 
-                    Ulehčuje zpracování objednávek tím, že vyčleněné EAN kódy a množství vypíše do dvou tabulek, 
-                    z nichž je možné snadno zkopírovat celý seznam kódů a vložit jej do skladového systému.
+                    Aplikace je vytvořena pro zadávání nového zboží do databáze, která ukládá titul, kód Lingea, množství a EAN kód. 
+                    Následně je možné vyhledat zboží podle titulu nebo vypsat celý seznam zboží z databáze.
                 </p>
-                <p>
-                    Jako vzor můžete použít například tento text:<br>
-                    <code>
-                        1 ANGLICTINA - KONVERZACE 129.00 9788075081896<br>
-                        1 BUDAPEST 299.00 9788075089106<br>
-                        2 GRAMATIKA SOUČASNÉ NĚMČINY 3. VYDÁNÍ 189.00 9788075084545
-                    </code>
-                </p>
-                <p>
-                    Nebo zadat jakýkoli jiný text, který používá prodejce při objednávání zboží. Text objednávky nemusí 
-                    být nijak formátovaný. Pokud v textu nějaký údaj chybí nebo je nadbytečný, aplikace nezobrazí 
-                    žádný výsledek, čímž zabraňuje nesprávnému zadání do skladového systému.
-                </p>
+                
     
             </div>
     </div>
