@@ -8,12 +8,9 @@ from .forms import PojistenyForm
 
 def home(request):
     query = request.GET.get('q')  # Získání vyhledávacího řetězce
-    if query:
-        # Pokud existuje požadavek na vyhledávání, filtruje seznam podle jména nebo příjmení
+   
         pojistencis = Pojisteny.objects.filter(jmeno__icontains=query) | Pojisteny.objects.filter(prijmeni__icontains=query)
-    else:
-        # Pokud nedojde k vyhledání, zobrazíme všechny pojištěnce
-        pojistencis = Pojisteny.objects.all()
+   
 
     return render(request, 'pojistenci/home.html', {'pojistencis': pojistencis})
 def add_pojisteny(request):
