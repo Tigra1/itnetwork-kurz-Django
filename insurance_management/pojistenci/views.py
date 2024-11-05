@@ -1,3 +1,4 @@
+from django.shortcuts import render
 
 # Create your views here.
 # pojistenci/views.py
@@ -10,9 +11,8 @@ def home(request):
     if query:
         # Pokud existuje požadavek na vyhledávání, filtruje seznam podle jména nebo příjmení
         pojistencis = Pojisteny.objects.filter(jmeno__icontains=query) | Pojisteny.objects.filter(prijmeni__icontains=query)
-    else:
-        # Pokud nedojde k vyhledání, zobrazíme všechny pojištěnce
-        pojistencis = Pojisteny.objects.all()
+
+
 
     return render(request, 'pojistenci/home.html', {'pojistencis': pojistencis})
 def add_pojisteny(request):
@@ -28,12 +28,3 @@ def add_pojisteny(request):
 def list_pojistencu(request):
     pojistenci = Pojisteny.objects.all()
     return render(request, 'pojistenci/list_pojistencu.html', {'pojistenci': pojistenci})
-
-def search_view(request):
-    query = request.GET.get('q', '')  # Получить параметр q из GET-запроса
-    if query:
-        pojistencis = Pojisteny.objects.filter(jmeno__icontains=query)  # Поиск по имени
-    else:
-        pojistencis = None  # Если поиска нет, не передавать список
-
-    return render(request, 'home.html', {'pojistencis': pojistencis})

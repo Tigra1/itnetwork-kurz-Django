@@ -179,7 +179,6 @@
             padding: 10px;
             background: #ddd;
             margin-top: 20px;
-            bottom: 0;
         }
      .home {
 
@@ -207,7 +206,7 @@
 
                 <form class="form-vertical">
                     <a href="{% url 'add_pojisteny' %}">Přidat nové zboží</a>
-                    <a href="{% url 'list_pojistencu' %}">Zobrazit všechny položký</a>
+                    <a href="{% url 'list_pojistencu' %}">Zobrazit všechny pooložký</a>
 
                     </form>
                 <form class="form-vertical_search">
@@ -222,7 +221,7 @@
             <div class="description">
                 <p>
                     <h2 class="text">Základní popis aplikace:</h2>
-                    Aplikace je vytvořena pro zadávání nového zboží do databáze, která ukládá titul, cenu, množství a EAN kód.
+                    Aplikace je vytvořena pro zadávání nového zboží do databáze, která ukládá titul, kód Lingea, množství a EAN kód.
                     Následně je možné vyhledat zboží podle titulu nebo vypsat celý seznam zboží z databáze.
                 </p>
 
@@ -232,7 +231,7 @@
  <!-- Вывод списка застрахованных -->
 {% if request.GET.q %}
     {% if pojistencis %}
-        <h3>Výsledky vyhledávání:</h3>
+        <h3>РVýsledky vyhledávání:</h3>
         <ul>
         {% for pojisteny in pojistencis %}
             <li>Název: {{ pojisteny.jmeno }} - Kód: {{ pojisteny.prijmeni }} - EAN: {{ pojisteny.telefon }} - Množství: {{ pojisteny.vek }}</li>
