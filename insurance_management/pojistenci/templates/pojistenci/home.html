@@ -4,12 +4,37 @@
     <meta charset="UTF-8">
     <title>Evidence zboží</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-</head>
-<body>
-<style>
-   .motto {
+ <style>
+           body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .top-menu-logo {
+        margin-left: 5%;
+    }
+    .table-container {
         display: flex;
+        justify-content: left;
+        gap: 10px;
+        background-color: rgb(231, 227, 227);
+        margin-left: 5%;
+        padding: 3%;
+        max-width: 24%;
+    }
+
+     .top-menu-sale {
+        background: #457a0f;
+        display: flex;
+        height: 60px;
+        color: aliceblue;
+        padding: 1%;
+        position: relative;
+    }
+    .motto {
+            display: flex;
         height: 12px;
         flex-direction: column;
         justify-content: center;
@@ -25,27 +50,7 @@
         text-transform: uppercase;
         width: max-content;
         text-decoration: none;
-    }
-    .table-container { 
-        display: flex; 
-        justify-content: left; 
-        gap: 10px; 
-        background-color: rgb(231, 227, 227);
-        margin-left: 5%;
-        padding: 3%;
-        max-width: 24%;
-    }
-    .top-menu-logo {
-        margin-left: 5%;
-    }
-    .top-menu-sale {
-        background: #457a0f;
-        display: flex;
-        height: 60px;
-        color: aliceblue;
-        padding: 1%;
-        position: relative;
-    }
+        }
     .form {
         margin-left: 5%;
         color: #1d1818;
@@ -53,12 +58,13 @@
         padding: 5%;
         max-width: 100%;
         font-family:  'Franklin Gothic Medium', Arial, sans-serif;
-    
+
     }
-    .text {
-        margin-left: 5%;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
+     h2.text {
+            font-size: 20px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
     .button {
         background-color: #457a0f;
         color: #ffffff;
@@ -72,11 +78,12 @@
         background-color: #fff;
         padding: 1%;
     }
-    .container {
+           .container {
             display: flex;
-           
-            gap: 70px;
-            padding: 3%;
+            justify-content: left;
+            padding: 20px;
+            gap: 50px;
+            margin: 4%
     }
     .description {
             max-width: 50%;
@@ -85,16 +92,106 @@
             margin-left: 100;
         }
     .form_container {
-        width: 30%;
-        
-    }
+            background-color: rgb(231, 227, 227);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+
+        }
+            .container {
+            display: flex;
+            justify-content: left;
+            padding: 20px;
+            gap: 50px;
+            margin: 4%
+
+        }
     textarea {
         width: 100%;
         box-sizing: border-box;
         resize: vertical;
     }
+     .form-vertical {
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* Расстояние между элементами */
+        max-width: 400px; /* Задаём ширину формы */
+        margin: 0 auto; /* Центрируем форму на странице */
+        font-size: 120%;
+        color: #1d1818;
+        background-color: rgb(231, 227, 227);
+        padding: 5%;
+        max-width: 100%;
+
+    }
+    .form-vertical_search {
+        display: flex;
+        flex-direction: column;
+        gap: 5px; /* Расстояние между элементами */
+        max-width: 400px; /* Задаём ширину формы */
+        margin-left: 0%; /* Центрируем форму на странице */
+        font-size:100%;
+        color: #1d1818;
+        background-color: rgb(231, 227, 227);
+        padding: 5%;
+        max-width: 100%;
+        font-family:  'Franklin Gothic Medium', Arial, sans-serif;
+    }
+ a {
+            color: #457a0f;
+            text-decoration: none;
+        }
+    .form-group {
+
+        display: flex;
+        flex-direction: column; /* Располагаем метки и поля по вертикали */
+    }
+
+    label {
+        margin-bottom: 5px; /* Отступ между меткой и полем */
+        font-weight: bold; /* Жирный шрифт для меток */
+    }
+
+    input {
+        padding: 10px; /* Внутренний отступ внутри поля */
+        font-size: 14px; /* Размер текста */
+        border: 1px solid #ccc; /* Рамка */
+        border-radius: 4px; /* Скругление углов */
+    }
+
+    .button {
+        padding: 10px;
+        background-color: #457a0f;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .button:hover {
+        background-color: #3a650d; /* Цвет при наведении */
+    }
+     footer {
+            text-align: center;
+            padding: 10px;
+            background: #ddd;
+            margin-top: 20px;
+        }
+     .home {
+
+        color: #457a0f;
+        text-decoration: none;
+        margin-left: 5%;
+        }
+
 </style>
-    <div class="top-menu-sale"> 
+</head>
+<body>
+
+    <div class="top-menu-sale">
         <div class="top-menu-logo">
             <a href="https://www.lingea.cz" title="lingea" class="top-logo">
                 <img src="https://www.lingea.cz/img/lingea/logo-white.svg?v=1" title="lingea" alt="lingea">
@@ -102,45 +199,50 @@
             <span class="motto">Radost z poznávání</span>
         </div>
     </div>
-    
-    <span class="motto">Radost z poznávání</span>
-    
+
     <div class="container">
-        <div class="form_container"> 
+        <div class="form_container">
             <label for="text"><h2 class="text">Evidence zboží</h2></label>
-                <form method="GET" action="{% url 'home' %}" class="form">
-                    <a href="{% url 'home' %}">Home</a><br>
-                    <a href="{% url 'add_pojisteny' %}">Přidat nové zboží</a><br>
+
+                <form class="form-vertical">
+                    <a href="{% url 'add_pojisteny' %}">Přidat nové zboží</a>
                     <a href="{% url 'list_pojistencu' %}">Zobrazit všechny pooložký</a>
-                    <br>
-                    <br>
+
+                    </form>
+                <form class="form-vertical_search">
+                    <label>Vyhledávaní zboží</label>
+
                     <input type="text" name="q" placeholder="Zadejte název zboží">
                     <br>
-                    <br>
                     <button type="submit" class="button">Hledat</button>
-                </form>
+                 </form>
          </div >
-        
+
             <div class="description">
-                <p> 
+                <p>
                     <h2 class="text">Základní popis aplikace:</h2>
-                    Aplikace je vytvořena pro zadávání nového zboží do databáze, která ukládá titul, kód Lingea, množství a EAN kód. 
+                    Aplikace je vytvořena pro zadávání nového zboží do databáze, která ukládá titul, kód Lingea, množství a EAN kód.
                     Následně je možné vyhledat zboží podle titulu nebo vypsat celý seznam zboží z databáze.
                 </p>
-                
-    
+
+
             </div>
     </div>
  <!-- Вывод списка застрахованных -->
+{% if request.GET.q %}
     {% if pojistencis %}
+        <h3>РVýsledky vyhledávání:</h3>
         <ul>
         {% for pojisteny in pojistencis %}
-            <li>{{ pojisteny.jmeno }} {{ pojisteny.prijmeni }} - Telefon: {{ pojisteny.telefon }} - Věk: {{ pojisteny.vek }}</li>
+            <li>Název: {{ pojisteny.jmeno }} - Kód: {{ pojisteny.prijmeni }} - EAN: {{ pojisteny.telefon }} - Množství: {{ pojisteny.vek }}</li>
         {% endfor %}
         </ul>
     {% else %}
-        <p>Žádní pojištěnci nebyli nalezeni.</p>
+        <p>Pro váš požadavek nebyly nalezeny žádné výsledky</p>
     {% endif %}
-  
+{% endif %}
+  <footer>
+        &copy; 2024 Igor Dontsov. Všechna práva vyhrazena.
+  </footer>
 </body>
 </html>
