@@ -1,4 +1,3 @@
-from django.shortcuts import render
 
 # Create your views here.
 # pojistenci/views.py
@@ -29,3 +28,12 @@ def add_pojisteny(request):
 def list_pojistencu(request):
     pojistenci = Pojisteny.objects.all()
     return render(request, 'pojistenci/list_pojistencu.html', {'pojistenci': pojistenci})
+
+def search_view(request):
+    query = request.GET.get('q', '')  # Получить параметр q из GET-запроса
+    if query:
+        pojistencis = Pojisteny.objects.filter(jmeno__icontains=query)  # Поиск по имени
+    else:
+        pojistencis = None  # Если поиска нет, не передавать список
+
+    return render(request, 'home.html', {'pojistencis': pojistencis})
