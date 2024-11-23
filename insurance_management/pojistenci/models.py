@@ -1,4 +1,4 @@
-from django.db import models
+
 
 # Tvorba modelů.
 
@@ -11,4 +11,4 @@ class Pojisteny(models.Model):
     telefon = models.CharField(max_length=13)
 
     def __str__(self):
-        return f"{self.jmeno} {self.prijmeni}, {self.vek} let, Telefon: {self.telefon}"
+        return f"Název: {self.jmeno}, Cena: {self.prijmeni} KČ, {self.vek} ks., EAN: {self.telefon}"
