@@ -232,7 +232,7 @@
  <!-- Вывод списка застрахованных -->
 {% if request.GET.q %}
     {% if pojistencis %}
-        <h3>РVýsledky vyhledávání:</h3>
+        <h3>Výsledky vyhledávání:</h3>
         <ul>
         {% for pojisteny in pojistencis %}
             <li>Název: {{ pojisteny.jmeno }} - Kód: {{ pojisteny.prijmeni }} - EAN: {{ pojisteny.telefon }} - Množství: {{ pojisteny.vek }}</li>
